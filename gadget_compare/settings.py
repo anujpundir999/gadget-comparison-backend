@@ -24,6 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+# SECRET_KEY = 'django-insecure-o&^ptgwa-utkxq#y6(c4-&#5pr9ksa3sv6_byrgpi9jy)8q7mt'
+# DEBUG = True
+# ALLOWED_HOSTS = []
+
+#prod
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-o&^ptgwa-utkxq#y6(c4-&#5pr9ksa3sv6_byrgpi9jy)8q7mt')
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
@@ -62,7 +67,7 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:5173').split(',')
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'https://gadget-comparison.netlify.app/').split(',')
 
 ROOT_URLCONF = 'gadget_compare.urls'
 
